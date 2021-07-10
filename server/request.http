@@ -1,0 +1,109 @@
+//REgister
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "studentCode": "tai",
+    "password": "123"
+}
+###
+//Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+
+{
+    "studentCode": "tan",
+    "password": "123"
+}
+
+###
+// CREATE Member
+POST http://localhost:5000/api/member/add
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGU5MTM2NGE2MWZlMzIzODg4YTJjOTEiLCJpYXQiOjE2MjU4OTE1NTV9.vcyHwcBoK6R9IDzWmxEOXAJg2IauRayyVyCKckKCibM
+
+
+{
+    "studentCode": "18110193",
+    "firstName": "Tai",
+    "lastName":"Nguyen Tuan",
+    "dateOfBirth":"2000-01-04",
+    "faculty": "CLC",
+    "specialty":"IT",
+    "image":"tai.jpg",
+    "phone":"0110101010",
+    "email":"tuantai@gmail.com"
+}
+
+###
+// READ list members
+GET http://localhost:5000/api/member/list
+
+###
+// UPDATE MEMBER
+PUT http://localhost:5000/api/member/update/60e973e543ef991324ddf597
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGU5MTM2NGE2MWZlMzIzODg4YTJjOTEiLCJpYXQiOjE2MjU4OTE1NTV9.vcyHwcBoK6R9IDzWmxEOXAJg2IauRayyVyCKckKCibM
+
+
+{
+    "studentCode": "18110193",
+    "firstName": "Tai",
+    "lastName":"Nguyen Tuan",
+    "dateOfBirth":"2000-01-04",
+    "faculty": "CLC",
+    "specialty":"IT",
+    "image":"tai.jpg",
+    "phone":"0110101010",
+    "email":"tuantai@gmail.com",
+    "evaluate": "EXCELLENT",
+    "comment":"excellent",
+    "role": "ADMIN"
+}
+
+###
+//DELETE Member
+DELETE  http://localhost:5000/api/member/delete/60e91ccaed45570b38bae2a1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGU5MTM2NGE2MWZlMzIzODg4YTJjOTEiLCJpYXQiOjE2MjU4OTE1NTV9.vcyHwcBoK6R9IDzWmxEOXAJg2IauRayyVyCKckKCibM
+
+
+
+###
+// READ list Activity
+GET http://localhost:5000/api/activity/list
+###
+//CREATE Activity
+POST http://localhost:5000/api/activity/add
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGU5MTM2NGE2MWZlMzIzODg4YTJjOTEiLCJpYXQiOjE2MjU4OTE1NTV9.vcyHwcBoK6R9IDzWmxEOXAJg2IauRayyVyCKckKCibM
+
+
+{
+    "actName": "QTTN",
+    "actDate":"2020-10-20",
+    "actAddress":"Sai Gon",
+    "content":"To chuc ca hat cho thieu nhi",
+    "cost": "5.000.000 VND",
+    "image": "hinh3.jpg"
+}
+
+###
+//UPDATE Activity
+PUT http://localhost:5000/api/activity/update/60e91ccaed45570b38bae2a1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGU5MTM2NGE2MWZlMzIzODg4YTJjOTEiLCJpYXQiOjE2MjU4OTE1NTV9.vcyHwcBoK6R9IDzWmxEOXAJg2IauRayyVyCKckKCibM
+
+{
+    "actName": "Quoc te thieu nhi 1/6",
+    "actDate":"2020-6-01",
+    "actAddress":"Linh Xuan",
+    "content":"To chuc ngay hoi thieu nhi",
+    "cost": "15.000.000 VND",
+    "image": "hinh4.jpg"
+}
+
+###
+//DELETE Activity
+DELETE  http://localhost:5000/api/activity/delete/60e94f60b7b9d63d64d7a00f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGU5MTM2NGE2MWZlMzIzODg4YTJjOTEiLCJpYXQiOjE2MjU4OTE1NTV9.vcyHwcBoK6R9IDzWmxEOXAJg2IauRayyVyCKckKCibM
